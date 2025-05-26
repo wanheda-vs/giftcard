@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class GiftCard {
   final String id;
   final String platform;
@@ -18,7 +20,7 @@ class GiftCard {
 
 // Sample gift card data
 final List<GiftCard> sampleGiftCards = [
-  GiftCard(
+  const GiftCard(
     id: '1',
     platform: 'Amazon',
     name: 'Amazon Gift Card',
@@ -26,7 +28,7 @@ final List<GiftCard> sampleGiftCards = [
     imageUrl: 'https://example.com/amazon.png',
     description: 'Use for millions of items on Amazon.com',
   ),
-  GiftCard(
+  const GiftCard(
     id: '2',
     platform: 'Steam',
     name: 'Steam Wallet Code',
@@ -34,7 +36,7 @@ final List<GiftCard> sampleGiftCards = [
     imageUrl: 'https://example.com/steam.png',
     description: 'Add funds to your Steam wallet for games and software',
   ),
-  GiftCard(
+  const GiftCard(
     id: '3',
     platform: 'Netflix',
     name: 'Netflix Gift Card',
@@ -42,7 +44,7 @@ final List<GiftCard> sampleGiftCards = [
     imageUrl: 'https://example.com/netflix.png',
     description: 'Enjoy your favorite movies and TV shows',
   ),
-  GiftCard(
+  const GiftCard(
     id: '4',
     platform: 'Spotify',
     name: 'Spotify Premium Gift Card',
@@ -50,7 +52,7 @@ final List<GiftCard> sampleGiftCards = [
     imageUrl: 'https://example.com/spotify.png',
     description: 'Ad-free music streaming experience',
   ),
-  GiftCard(
+  const GiftCard(
     id: '5',
     platform: 'Google Play',
     name: 'Google Play Gift Card',
@@ -58,7 +60,7 @@ final List<GiftCard> sampleGiftCards = [
     imageUrl: 'https://example.com/googleplay.png',
     description: 'Use for apps, games, movies, and more',
   ),
-  GiftCard(
+  const GiftCard(
     id: '6',
     platform: 'iTunes',
     name: 'iTunes Gift Card',

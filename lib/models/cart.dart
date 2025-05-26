@@ -10,8 +10,11 @@ class CartItem {
 
 class Cart extends ChangeNotifier {
   final List<CartItem> _items = [];
+  Function(GiftCard)? onItemRemoved;
 
-  List<CartItem> get items => _items;
+  Cart(); // Explicit constructor
+
+  List<CartItem> get items => List.unmodifiable(_items);
 
   void addItem(GiftCard giftCard) {
     final existingIndex =
@@ -26,8 +29,15 @@ class Cart extends ChangeNotifier {
   }
 
   void removeItem(String giftCardId) {
-    _items.removeWhere((item) => item.giftCard.id == giftCardId);
-    notifyListeners();
+    final index = _items.indexWhere((item) => item.giftCard.id == giftCardId);
+    if (index >= 0) {
+      final removedItem = _items[index].giftCard;
+      _items.removeAt(index);
+      notifyListeners();
+      if (onItemRemoved != null) {
+        onItemRemoved!(removedItem);
+      }
+    }
   }
 
   double get total => _items.fold(
